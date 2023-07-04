@@ -34,14 +34,14 @@ void print_hpm(const uint64_t b1[16], const uint64_t b2[16])
     printf("  \"jalr_misp\": %d,\n", b2[6] - b1[6]);
     printf("  \"ret\"      : %d,\n", b2[4] - b1[4]);
     printf("  \"ret_misp\" : %d,\n", b2[7] - b1[7]);
-    printf("  \"jalr_nret_btb_hit\" : %d,\n", b2[8] - b1[8]);
-    printf("  \"jalr_nret_btb_misp\": %d,\n", b2[9] - b1[9]);
-    printf("  \"br_bim_misp\"       : %d,\n", b2[11] - b1[11]);
-    printf("  \"br_tage_hit\"       : %d,\n", b2[12] - b1[12]);
-    printf("  \"br_tage_misp\"      : %d,\n", b2[13] - b1[13]);
-    printf("  \"br_loop_hit\"       : %d,\n", b2[10] - b1[10]);
-    printf("  \"br_loop_flip\"      : %d,\n", b2[14] - b1[14]);
-    printf("  \"br_loop_flip_misp\" : %d\n", b2[15] - b1[15]);
+    printf("  \"flush\"    : %d,\n", b2[8] - b1[8]);
+    // printf("  \"jalr_nret_btb_misp\": %d,\n", b2[9] - b1[9]);
+    // printf("  \"br_bim_misp\"       : %d,\n", b2[11] - b1[11]);
+    // printf("  \"br_tage_hit\"       : %d,\n", b2[12] - b1[12]);
+    // printf("  \"br_tage_misp\"      : %d,\n", b2[13] - b1[13]);
+    // printf("  \"br_loop_hit\"       : %d,\n", b2[10] - b1[10]);
+    // printf("  \"br_loop_flip\"      : %d,\n", b2[14] - b1[14]);
+    // printf("  \"br_loop_flip_misp\" : %d\n", b2[15] - b1[15]);
     printf("}\n");
 }
 
