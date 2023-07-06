@@ -9,4 +9,4 @@
 # 容器中交叉编译命令
 riscv64-unknown-elf-gcc -march=rv64g -mabi=lp64d -mcmodel=medany \
     -I. -O3 -nostdlib -nostartfiles -Tlink.ld \
-    -o readcsr_bm readcsr_bm.c bench/*.c lib/crt.S lib/*.c
+    -o readcsr_bm readcsr_bm.c bench/*.c benchmark-dhrystone/*.c benchmark-dhrystone/*.S lib/crt.S lib/*.c

@@ -17,10 +17,10 @@ void snapshot_hpm(uint64_t b[16])
     b[9] = __csrr_hpmcounter10();
     b[10] = __csrr_hpmcounter11();
     b[11] = __csrr_hpmcounter12();
-    b[12] = __csrr_hpmcounter13();
-    b[13] = __csrr_hpmcounter14();
-    b[14] = __csrr_hpmcounter15();
-    b[15] = __csrr_hpmcounter16();
+    // b[12] = __csrr_hpmcounter13();
+    // b[13] = __csrr_hpmcounter14();
+    // b[14] = __csrr_hpmcounter15();
+    // b[15] = __csrr_hpmcounter16();
 }
 
 void print_hpm(const uint64_t b1[16], const uint64_t b2[16])
@@ -36,7 +36,8 @@ void print_hpm(const uint64_t b1[16], const uint64_t b2[16])
     printf("  \"ret_misp\" : %d,\n", b2[7] - b1[7]);
     printf("  \"flush\"    : %d,\n", b2[8] - b1[8]);
     printf("  \"rob full window\"    : %d,\n", b2[9] - b1[9]);
-    printf("  \"rob full window\"    : %d,\n", b2[10] - b1[10]);
+    printf("  \"load miss\"    : %d,\n", b2[10] - b1[10]);
+    printf("  \"D$ miss\"    : %d,\n", b2[11] - b1[11]);
 
     // printf("  \"jalr_nret_btb_misp\": %d,\n", b2[9] - b1[9]);
     // printf("  \"br_bim_misp\"       : %d,\n", b2[11] - b1[11]);
@@ -52,6 +53,7 @@ int do_qsort();
 int do_matmul();
 int do_switch();
 int do_fordfulk();
+int do_dhrystone();
 
 #define DO(f)                  \
     snapshot_hpm(b1);          \
@@ -69,4 +71,5 @@ int main()
     DO(matmul);
     DO(switch);
     DO(fordfulk);
+    DO(dhrystone);
 }
